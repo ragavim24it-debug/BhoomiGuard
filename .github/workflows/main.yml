@@ -32,6 +32,12 @@ jobs:
         working-directory: landguard-pro-main
         run: npm run build
 
+       - name: Check build output
+        working-directory: landguard-pro-main
+        run: |
+          echo "=== BUILD OUTPUT ==="
+          find . -maxdepth 3 -type f | head -100
+        
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
